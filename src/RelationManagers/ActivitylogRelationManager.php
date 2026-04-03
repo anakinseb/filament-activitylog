@@ -1,14 +1,14 @@
 <?php
 
-namespace Rmsramos\Activitylog\RelationManagers;
+namespace Anakinseb\Activitylog\RelationManagers;
 
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
-use Rmsramos\Activitylog\ActivitylogPlugin;
-use Rmsramos\Activitylog\Resources\ActivitylogResource;
+use Anakinseb\Activitylog\ActivitylogPlugin;
+use Anakinseb\Activitylog\Resources\ActivitylogResource;
 
 class ActivitylogRelationManager extends RelationManager
 {

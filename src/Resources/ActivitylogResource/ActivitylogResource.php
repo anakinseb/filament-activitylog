@@ -2,7 +2,7 @@
 
 namespace Anakinseb\Activitylog\Resources\ActivitylogResource;
 
-use ActivitylogForm;
+use Anakinseb\Activitylog\Resources\ActivitylogResource\Schemas\ActivitylogForm;
 use Exception;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\DatePicker;

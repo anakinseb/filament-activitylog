@@ -1,9 +1,9 @@
 <?php
 
-namespace Rmsramos\Activitylog\Actions;
+namespace Anakinseb\Activitylog\Actions;
 
-use Filament\Tables\Actions\Action;
-use Rmsramos\Activitylog\Actions\Concerns\ActionContent;
+use Anakinseb\Activitylog\Actions\Concerns\ActionContent;
+use Filament\Actions\Action;
 
 class ActivityLogTimelineTableAction extends Action
 {

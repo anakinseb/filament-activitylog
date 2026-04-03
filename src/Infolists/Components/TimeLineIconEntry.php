@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmsramos\Activitylog\Infolists\Components;
+namespace Anakinseb\Activitylog\Infolists\Components;
 
 use Filament\Infolists\Components\IconEntry;
 

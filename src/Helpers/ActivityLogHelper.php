@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmsramos\Activitylog\Helpers;
+namespace Anakinseb\Activitylog\Helpers;
 
 use Illuminate\Support\Str;
 

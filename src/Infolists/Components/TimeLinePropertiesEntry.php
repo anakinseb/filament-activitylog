@@ -1,11 +1,11 @@
 <?php
 
-namespace Rmsramos\Activitylog\Infolists\Components;
+namespace Anakinseb\Activitylog\Infolists\Components;
 
 use Filament\Infolists\Components\Entry;
 use Illuminate\Support\HtmlString;
-use Rmsramos\Activitylog\ActivitylogPlugin;
-use Rmsramos\Activitylog\Infolists\Concerns\HasModifyState;
+use Anakinseb\Activitylog\ActivitylogPlugin;
+use Anakinseb\Activitylog\Infolists\Concerns\HasModifyState;
 
 class TimeLinePropertiesEntry extends Entry
 {
