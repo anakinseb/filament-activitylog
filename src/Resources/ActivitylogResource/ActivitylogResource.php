@@ -1,6 +1,6 @@
 <?php
 
-namespace Anakinseb\Activitylog\Resources\ActivitylogResource;
+namespace Anakinseb\Activitylog\Resources;
 
 use Anakinseb\Activitylog\Resources\ActivitylogResource\Schemas\ActivitylogForm;
 use Exception;
@@ -298,7 +298,7 @@ class ActivitylogResource extends Resource
 
                 return $indicators;
             })
-            ->form([
+            ->schema([
                 self::getDatePickerCompoment('created_from'),
                 self::getDatePickerCompoment('created_until'),
             ])
@@ -366,12 +366,14 @@ class ActivitylogResource extends Resource
 
                 if (ActivityLogHelper::classUsesTrait($model, HasCustomActivityResource::class)) {
                     $resourceModel = $model->getFilamentActualResourceModel($record);
+                    /** @disregard P103  */
                     $user = auth()->user();
 
                     return $user && $user->can('update', $resourceModel);
                 }
 
                 // Fallback to check if the user can edit the model using a generic policy
+                /** @disregard P103  */
                 $user = auth()->user();
 
                 return $user && $record->subject && $user->can('update', $record->subject);
@@ -425,10 +427,14 @@ class ActivitylogResource extends Resource
                 $record->update($oldProperties);
             });
 
+            /** @disregard P103  */
             if (auth()->user()) {
                 activity()
-                    ->performedOn($record)
+                    ->performedOn($record) 
+                    
+                    /** @disregard P103  */
                     ->causedBy(auth()->user())
+
                     ->withProperties([
                         'attributes' => $oldProperties,
                         'old' => $newProperties,
@@ -478,7 +484,8 @@ class ActivitylogResource extends Resource
         if (! $record->subject->trashed()) {
             return false;
         }
-
+        
+        /** @disregard P103  */
         $user = auth()->user();
 
         if ($user && method_exists($record->subject, 'exists')) {
@@ -517,9 +524,11 @@ class ActivitylogResource extends Resource
             $subject->refresh();
             $afterRestore = $subject->toArray();
 
+            /** @disregard P103  */
             if (auth()->user()) {
                 activity()
                     ->performedOn($subject)
+                    /** @disregard P103  */
                     ->causedBy(auth()->user())
                     ->withProperties([
                         'attributes' => $afterRestore,

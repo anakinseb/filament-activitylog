@@ -2,13 +2,14 @@
 
 namespace Anakinseb\Activitylog\RelationManagers;
 
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Tables\Actions\ViewAction;
+use Filament\Actions\Action;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Anakinseb\Activitylog\ActivitylogPlugin;
 use Anakinseb\Activitylog\Resources\ActivitylogResource;
+use Filament\Support\Icons\Heroicon;
 
 class ActivitylogRelationManager extends RelationManager
 {
@@ -24,9 +25,9 @@ class ActivitylogRelationManager extends RelationManager
             ->headline();
     }
 
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return ActivitylogResource::form($form);
+        return ActivitylogResource::form($schema);
     }
 
     public function table(Table $table): Table
@@ -34,8 +35,10 @@ class ActivitylogRelationManager extends RelationManager
         return ActivitylogResource::table(
             $table
                 ->heading(ActivitylogPlugin::get()->getPluralLabel())
-                ->actions([
-                    ViewAction::make(),
+                ->rowActions([
+                    Action::make('view')
+                        ->icon(Heroicon::OutlinedEye)
+                        ->url(fn ($record) => route('activitylogs.view', $record)),
                 ])
         );
     }
