@@ -1,12 +1,11 @@
 <?php
 
-namespace Rmsramos\Activitylog\Resources\ActivitylogResource;
+namespace Anakinseb\Activitylog\Resources\ActivitylogResource;
 
 use ActivitylogForm;
 use Exception;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\Placeholder;
 use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -24,13 +23,13 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use Livewire\Component as Livewire;
-use Rmsramos\Activitylog\Actions\Concerns\ActionContent;
-use Rmsramos\Activitylog\ActivitylogPlugin;
-use Rmsramos\Activitylog\Helpers\ActivityLogHelper;
-use Rmsramos\Activitylog\RelationManagers\ActivitylogRelationManager;
-use Rmsramos\Activitylog\Resources\ActivitylogResource\Pages\ListActivitylog;
-use Rmsramos\Activitylog\Resources\ActivitylogResource\Pages\ViewActivitylog;
-use Rmsramos\Activitylog\Traits\HasCustomActivityResource;
+use Anakinseb\Activitylog\Actions\Concerns\ActionContent;
+use Anakinseb\Activitylog\ActivitylogPlugin;
+use Anakinseb\Activitylog\Helpers\ActivityLogHelper;
+use Anakinseb\Activitylog\RelationManagers\ActivitylogRelationManager;
+use Anakinseb\Activitylog\Resources\ActivitylogResource\Pages\ListActivitylog;
+use Anakinseb\Activitylog\Resources\ActivitylogResource\Pages\ViewActivitylog;
+use Anakinseb\Activitylog\Traits\HasCustomActivityResource;
 use Spatie\Activitylog\Models\Activity;
 
 class ActivitylogResource extends Resource
@@ -343,7 +342,7 @@ class ActivitylogResource extends Resource
 
     public static function shouldRegisterNavigation(): bool
     {
-        $plugin = Filament::getCurrentPanel()?->getPlugin('rmsramos/activitylog');
+        $plugin = Filament::getCurrentPanel()?->getPlugin('anakinseb/activitylog');
 
         return $plugin?->getNavigationItem() ?? false;
     }

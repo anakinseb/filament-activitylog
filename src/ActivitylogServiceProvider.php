@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmsramos\Activitylog;
+namespace Anakinseb\Activitylog;
 
 use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;
@@ -22,7 +22,7 @@ class ActivitylogServiceProvider extends PackageServiceProvider
             ->hasInstallCommand(function (InstallCommand $installCommand) {
                 $installCommand
                     ->publishConfigFile()
-                    ->askToStarRepoOnGitHub('rmsramos/activitylog')
+                    ->askToStarRepoOnGitHub('anakinseb/activitylog')
                     ->startWith(function (InstallCommand $installCommand) {
                         $installCommand->call('vendor:publish', [
                             '--provider' => "Spatie\Activitylog\ActivitylogServiceProvider",
@@ -38,6 +38,6 @@ class ActivitylogServiceProvider extends PackageServiceProvider
             Css::make('activitylog-styles', __DIR__ . '/../resources/dist/activitylog.css'),
         ];
 
-        FilamentAsset::register($assets, 'rmsramos/activitylog');
+        FilamentAsset::register($assets, 'anakinseb/activitylog');
     }
 }

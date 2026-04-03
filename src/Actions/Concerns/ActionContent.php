@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmsramos\Activitylog\Actions\Concerns;
+namespace Anakinseb\Activitylog\Actions\Concerns;
 
 use Carbon\Exceptions\InvalidFormatException;
 use Closure;
@@ -11,11 +11,11 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Collection;
-use Rmsramos\Activitylog\ActivitylogPlugin;
-use Rmsramos\Activitylog\Infolists\Components\TimeLineIconEntry;
-use Rmsramos\Activitylog\Infolists\Components\TimeLinePropertiesEntry;
-use Rmsramos\Activitylog\Infolists\Components\TimeLineRepeatableEntry;
-use Rmsramos\Activitylog\Infolists\Components\TimeLineTitleEntry;
+use Anakinseb\Activitylog\ActivitylogPlugin;
+use Anakinseb\Activitylog\Infolists\Components\TimeLineIconEntry;
+use Anakinseb\Activitylog\Infolists\Components\TimeLinePropertiesEntry;
+use Anakinseb\Activitylog\Infolists\Components\TimeLineRepeatableEntry;
+use Anakinseb\Activitylog\Infolists\Components\TimeLineTitleEntry;
 use Spatie\Activitylog\Models\Activity;
 
 trait ActionContent
