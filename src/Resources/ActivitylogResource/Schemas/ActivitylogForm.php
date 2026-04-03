@@ -1,11 +1,15 @@
 <?php
 
+namespace Anakinseb\Activitylog\Resources\ActivitylogResource\Schemas;
+
+use Spatie\Activitylog\Models;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Anakinseb\Activitylog\ActivitylogPlugin;
 
 class ActivitylogForm

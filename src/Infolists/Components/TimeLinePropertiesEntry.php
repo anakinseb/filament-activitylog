@@ -13,9 +13,9 @@ class TimeLinePropertiesEntry extends Entry
 
     protected string $view = 'activitylog::filament.infolists.components.time-line-propertie-entry';
 
-    protected function setup(): void
+    protected function setUp(): void
     {
-        parent::setup();
+        parent::setUp();
 
         $this->configurePropertieEntry();
     }

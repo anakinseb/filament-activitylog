@@ -6,9 +6,9 @@ use Filament\Infolists\Components\RepeatableEntry;
 
 class TimeLineRepeatableEntry extends RepeatableEntry
 {
-    protected function setup(): void
+    protected function setUp(): void
     {
-        parent::setup();
+        parent::setUp();
 
         $this->configureRepeatableEntry();
     }
