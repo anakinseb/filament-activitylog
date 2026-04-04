@@ -11,12 +11,11 @@ class TimeLinePropertiesEntry extends Entry
 {
     use HasModifyState;
 
-    protected string $view = 'activitylog::filament.infolists.components.time-line-propertie-entry';
+    protected string $view = 'activitylog::filament.infolists.components.time-line-properties-entry';
 
     protected function setUp(): void
     {
         parent::setUp();
-
         $this->configurePropertieEntry();
     }
 
@@ -29,15 +28,15 @@ class TimeLinePropertiesEntry extends Entry
 
     protected function modifiedProperties($state): ?HtmlString
     {
-        $properties = $state['properties'];
+        $properties = $state['properties'] ?? [];
 
         if (! empty($properties)) {
             $changes    = $this->getPropertyChanges($properties);
-            $causerName = $this->getCauserName($state['causer']);
+            $causerName = $this->getCauserName($state['causer']) ?? null;
 
             return new HtmlString(trans('activitylog::infolists.components.updater_updated', [
                 'causer'  => $causerName,
-                'event'   => __('activitylog::action.event.' . $state['event']),
+                'event'   => __('activitylog::action.event.' . $state['event']) ?? 'updated',
                 'changes' => implode('<br>', $changes),
             ]));
         }

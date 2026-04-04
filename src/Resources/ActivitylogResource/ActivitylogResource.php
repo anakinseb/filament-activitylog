@@ -431,10 +431,7 @@ class ActivitylogResource extends Resource
             if (auth()->user()) {
                 activity()
                     ->performedOn($record) 
-                    
-                    /** @disregard P103  */
                     ->causedBy(auth()->user())
-
                     ->withProperties([
                         'attributes' => $oldProperties,
                         'old' => $newProperties,
